@@ -1,0 +1,37 @@
+{
+  "descripcion": "Triangulo basico sin ponderar (pesos iguales)",
+  "nodos": {
+    "A": "Servidor A",
+    "B": "Servidor B",
+    "C": "Servidor C"
+  },
+  "aristas": [
+    {
+      "origen": "A",
+      "destino": "B",
+      "peso": 1.0
+    },
+    {
+      "origen": "B",
+      "destino": "C",
+      "peso": 1.0
+    },
+    {
+      "origen": "A",
+      "destino": "C",
+      "peso": 1.0
+    }
+  ],
+  "zonas": {
+    "spin_positivo": "Zona ALFA",
+    "spin_negativo": "Zona BETA"
+  },
+  "mostrar_simetricas": false,
+  "exact_solver_max_variables": 20,
+  "annealing": {
+    "habilitado": true,
+    "num_reads": 200,
+    "seed": 42
+  },
+  "tolerancia_energia": 1e-09
+}

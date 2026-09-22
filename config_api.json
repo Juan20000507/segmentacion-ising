@@ -1,0 +1,13 @@
+{
+  "host": "127.0.0.1",
+  "puerto": 8765,
+  "api_key_env": "MAXCUT_API_KEY",
+  "max_nodos_exacto": 18,
+  "max_nodos_total": 200,
+  "max_enlaces": 2000,
+  "peso_maximo": 1000000,
+  "annealing": {"num_reads": 200, "seed": 42},
+  "tolerancia_energia": 1e-9,
+  "zonas": {"spin_positivo": "Zona ALFA", "spin_negativo": "Zona BETA"},
+  "abrir_navegador": true
+}

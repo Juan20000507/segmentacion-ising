@@ -1,0 +1,18 @@
+{
+  "descripcion": "Segmentacion por criticidad: Web, App y Base de Datos Core",
+  "nodos": {
+    "W":  "Servidor Web",
+    "A":  "Servidor App",
+    "DB": "Base de Datos Core"
+  },
+  "aristas": [
+    {"origen": "W", "destino": "A",  "peso": 2.0,  "nota": "Conexion estandar de produccion"},
+    {"origen": "A", "destino": "DB", "peso": 10.0, "nota": "Acceso directo al Core de datos"},
+    {"origen": "W", "destino": "DB", "peso": 5.0,  "nota": "Conexion directa expuesta"}
+  ],
+  "zonas": {"spin_positivo": "Zona ALFA", "spin_negativo": "Zona BETA"},
+  "mostrar_simetricas": false,
+  "exact_solver_max_variables": 20,
+  "annealing": {"habilitado": true, "num_reads": 200, "seed": 42},
+  "tolerancia_energia": 1e-9
+}

@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "Si usa este trabajo, por favor cítelo como se indica."
+title: "Preparación cuántica aplicada a la contención de incidentes: de Max-Cut a un solver híbrido clásico-QUBO"
+abstract: >-
+  Banco de pruebas reproducible y modelos de optimización (Ising, QUBO, cortes de grafo)
+  para decidir qué segmentos de red aislar durante un incidente de seguridad.
+authors:
+  - family-names: "Herrera C."
+    given-names: "Juan Carlos"
+version: "1.1"
+date-released: "2026-09-22"
+license: MIT
+keywords:
+  - quantum annealing
+  - QUBO
+  - Ising model
+  - network segmentation
+  - incident containment
+  - minimum cut

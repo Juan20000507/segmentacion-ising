@@ -1,0 +1,379 @@
+{
+  "descripcion": "Banco de pruebas v1: estrategias de contencion sobre topologias empresariales sinteticas",
+  "semilla_global": 2026,
+  "topologias": {
+    "cantidad": 5,
+    "capas": {
+      "usuarios": 40,
+      "dmz": 4,
+      "aplicaciones": 12,
+      "datos": 5,
+      "gestion": 3,
+      "ot": 6
+    }
+  },
+  "valor_nodo": {
+    "usuarios": 1,
+    "dmz": 2,
+    "aplicaciones": 4,
+    "datos": 20,
+    "gestion": 15,
+    "ot": 25
+  },
+  "joyas_corona": [
+    "datos",
+    "gestion",
+    "ot"
+  ],
+  "conexiones": [
+    {
+      "a": "usuarios",
+      "b": "usuarios",
+      "prob_enlace": 0.04,
+      "p_propagacion": [
+        0.03,
+        0.08
+      ],
+      "valor_negocio": [
+        0.1,
+        0.5
+      ]
+    },
+    {
+      "a": "usuarios",
+      "b": "aplicaciones",
+      "prob_enlace": 0.25,
+      "p_propagacion": [
+        0.04,
+        0.1
+      ],
+      "valor_negocio": [
+        1.0,
+        3.0
+      ]
+    },
+    {
+      "a": "usuarios",
+      "b": "gestion",
+      "prob_enlace": 0.6,
+      "p_propagacion": [
+        0.02,
+        0.06
+      ],
+      "valor_negocio": [
+        2.0,
+        4.0
+      ]
+    },
+    {
+      "a": "dmz",
+      "b": "aplicaciones",
+      "prob_enlace": 0.5,
+      "p_propagacion": [
+        0.06,
+        0.15
+      ],
+      "valor_negocio": [
+        3.0,
+        6.0
+      ]
+    },
+    {
+      "a": "aplicaciones",
+      "b": "aplicaciones",
+      "prob_enlace": 0.15,
+      "p_propagacion": [
+        0.04,
+        0.12
+      ],
+      "valor_negocio": [
+        1.0,
+        3.0
+      ]
+    },
+    {
+      "a": "aplicaciones",
+      "b": "datos",
+      "prob_enlace": 0.4,
+      "p_propagacion": [
+        0.06,
+        0.15
+      ],
+      "valor_negocio": [
+        5.0,
+        10.0
+      ]
+    },
+    {
+      "a": "gestion",
+      "b": "aplicaciones",
+      "prob_enlace": 0.5,
+      "p_propagacion": [
+        0.04,
+        0.12
+      ],
+      "valor_negocio": [
+        1.0,
+        2.0
+      ]
+    },
+    {
+      "a": "gestion",
+      "b": "datos",
+      "prob_enlace": 0.6,
+      "p_propagacion": [
+        0.04,
+        0.12
+      ],
+      "valor_negocio": [
+        1.0,
+        2.0
+      ]
+    },
+    {
+      "a": "aplicaciones",
+      "b": "ot",
+      "prob_enlace": 0.1,
+      "p_propagacion": [
+        0.04,
+        0.1
+      ],
+      "valor_negocio": [
+        3.0,
+        6.0
+      ]
+    },
+    {
+      "a": "gestion",
+      "b": "ot",
+      "prob_enlace": 0.3,
+      "p_propagacion": [
+        0.02,
+        0.08
+      ],
+      "valor_negocio": [
+        1.0,
+        3.0
+      ]
+    },
+    {
+      "a": "ot",
+      "b": "ot",
+      "prob_enlace": 0.3,
+      "p_propagacion": [
+        0.1,
+        0.2
+      ],
+      "valor_negocio": [
+        4.0,
+        8.0
+      ]
+    }
+  ],
+  "simulacion": {
+    "corridas_por_topologia": 300,
+    "pasos_totales": 15,
+    "paso_deteccion": 3,
+    "prob_observacion": 0.6,
+    "capas_entrada": [
+      "usuarios",
+      "dmz"
+    ]
+  },
+  "estrategias": {
+    "habilitadas": [
+      "ninguna",
+      "aleatoria",
+      "grado",
+      "regla_estatica",
+      "aislar_observados",
+      "maxcut",
+      "mincut",
+      "vecindario",
+      "corte_riesgo",
+      "v3_lagrange",
+      "v3_qubo",
+      "v3_hibrido"
+    ],
+    "presupuesto_cortes": 12,
+    "regla_estatica": [
+      [
+        "aplicaciones",
+        "ot"
+      ],
+      [
+        "gestion",
+        "ot"
+      ],
+      [
+        "dmz",
+        "aplicaciones"
+      ]
+    ],
+    "maxcut": {
+      "num_reads": 50,
+      "seed": 7
+    },
+    "mincut_escala_capacidad": 1000,
+    "corte_riesgo": {
+      "horizonte_inferencia": 2,
+      "visibilidad_supuesta": 0.6,
+      "lambdas": [
+        10,
+        18,
+        32,
+        56,
+        100,
+        178,
+        316,
+        562,
+        1000,
+        1778,
+        3162,
+        5623,
+        10000,
+        17783,
+        31623,
+        56234,
+        100000
+      ],
+      "presupuesto_costo_pct": 15,
+      "nota": "horizonte y rango de lambda ajustados con semilla 999 (validacion); la evaluacion usa semilla_global 2026"
+    },
+    "vecindario": {
+      "p_min": 0.1
+    },
+    "v3": {
+      "horizonte_inferencia": 2,
+      "visibilidad_supuesta": 0.6,
+      "lambda": 1000,
+      "max_cuarentena": 3,
+      "lagrange_iteraciones": 20,
+      "qubo": {
+        "num_reads": 50,
+        "num_sweeps": 1000,
+        "factor_penalizacion": 1.0,
+        "seed": 11
+      },
+      "busqueda_local_iteraciones": 200
+    },
+    "v4": {
+      "zonas": 3,
+      "lambda": 1000,
+      "gamma": 50,
+      "delta": 200,
+      "juntos": [
+        [
+          "aplicaciones",
+          "datos"
+        ]
+      ],
+      "separados": [
+        [
+          "dmz",
+          "ot"
+        ],
+        [
+          "usuarios",
+          "ot"
+        ]
+      ]
+    }
+  },
+  "reporte": {
+    "carpeta": "resultados",
+    "nivel_confianza_z": 1.96,
+    "techo_costo_negocio_pct": 20
+  },
+  "sensibilidad": {
+    "prob_observacion": [
+      0.3,
+      0.6,
+      0.9
+    ],
+    "paso_deteccion": [
+      2,
+      3,
+      5
+    ],
+    "corridas_por_topologia": 300,
+    "estrategias": [
+      "ninguna",
+      "regla_estatica",
+      "aislar_observados",
+      "mincut",
+      "vecindario",
+      "corte_riesgo"
+    ]
+  },
+  "comparacion_solvers": {
+    "instancias": 60,
+    "limites_cuarentena": [
+      1,
+      2,
+      3,
+      5,
+      8
+    ],
+    "configuraciones_recocido": [
+      {
+        "num_reads": 50,
+        "num_sweeps": 1000
+      },
+      {
+        "num_reads": 100,
+        "num_sweeps": 4000
+      }
+    ]
+  },
+  "comparacion_v4": {
+    "instancias": 20,
+    "zonas": [
+      3,
+      4
+    ],
+    "segundos_ilp": 60,
+    "segundos_presupuesto": 2.0,
+    "semilla": 17,
+    "recocido": {
+      "num_reads": 200,
+      "num_sweeps": 8000,
+      "factor_penalizacion": 1.5
+    }
+  },
+  "comparacion_escala": {
+    "instancias": 2,
+    "semilla": 31,
+    "factor_penalizacion": 1.5,
+    "escalas": [
+      {
+        "factor": 1,
+        "segundos": 10,
+        "segundos_ilp": 60,
+        "num_reads": 100,
+        "num_sweeps": 8000
+      },
+      {
+        "factor": 4,
+        "segundos": 15,
+        "segundos_ilp": 60,
+        "num_reads": 40,
+        "num_sweeps": 5000
+      },
+      {
+        "factor": 8,
+        "segundos": 20,
+        "segundos_ilp": 60,
+        "num_reads": 25,
+        "num_sweeps": 3000
+      },
+      {
+        "factor": 16,
+        "segundos": 25,
+        "segundos_ilp": 60,
+        "num_reads": 15,
+        "num_sweeps": 2000
+      }
+    ]
+  }
+}

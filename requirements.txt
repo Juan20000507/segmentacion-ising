@@ -1,0 +1,8 @@
+dimod>=0.12,<0.13
+dwave-samplers>=1.2,<2
+fastapi>=0.110,<1
+uvicorn>=0.29,<1
+networkx>=3.2,<4
+numpy>=1.24
+pulp>=3.0,<4
+scipy>=1.11
