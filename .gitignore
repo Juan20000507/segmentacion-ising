@@ -1,0 +1,4 @@
+   .venv_maxcut/
+   __pycache__/
+   *.pyc
+   banco_pruebas/resultados/
