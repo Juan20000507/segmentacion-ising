@@ -1,10 +1,13 @@
 # Segmentación Ising: contención de incidentes como problema de optimización
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22906001.svg)](https://doi.org/10.5281/zenodo.22906001)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 Banco de pruebas reproducible y modelos de optimización para decidir **qué segmentos de red aislar durante un incidente de seguridad**, con comparación sistemática entre solvers clásicos y formulaciones QUBO/Ising.
 
 Este repositorio contiene el código que genera todos los resultados del artículo:
 
-> Herrera C., J. C. (2026). *Preparación cuántica aplicada a la contención de incidentes: de Max-Cut a un solver híbrido clásico–QUBO*. Preimpresión v1.1. Ver `docs/paper_v1.1.html`.
+> Herrera C., J. C. (2026). *Preparación cuántica aplicada a la contención de incidentes: de Max-Cut a un solver híbrido clásico–QUBO*. Preimpresión v1.1. Ver `docs/paper_v1.1.html`. DOI: [10.5281/zenodo.22906001](https://doi.org/10.5281/zenodo.22906001)
 
 ## Qué hay aquí
 

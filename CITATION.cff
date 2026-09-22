@@ -10,6 +10,11 @@ authors:
 version: "1.1"
 date-released: "2026-09-22"
 license: MIT
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.22906001
+    description: "DOI de concepto: siempre apunta a la ultima version"
+repository-code: "https://github.com/Juan20000507/segmentacion-ising"
 keywords:
   - quantum annealing
   - QUBO
