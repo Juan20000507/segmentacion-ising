@@ -68,6 +68,12 @@ python servidor.py     # escucha en 127.0.0.1:8765, abre la documentación inter
 - Este código produce **propuestas de contención para revisión humana**, no acciones automáticas. Aislar segmentos de una red en producción sin aprobación puede interrumpir servicios críticos.
 - No se ejecutó ningún experimento en hardware cuántico. Los resultados sobre QUBO se obtuvieron con recocido simulado clásico.
 
+## Contacto
+
+Comentarios, críticas o interés en colaborar: [Juan Carlos Herrera C. en LinkedIn](https://www.linkedin.com/in/juan-carlos-herrera-cuellar-092266b3).
+
+Para preguntas técnicas sobre el código o para reportar un problema, los [Issues](https://github.com/Juan20000507/segmentacion-ising/issues) de este repositorio están abiertos.
+
 ## Licencia
 
 Código bajo licencia MIT (ver `LICENSE`). El artículo en `docs/` se distribuye bajo CC BY 4.0.
